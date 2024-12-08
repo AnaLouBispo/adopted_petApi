@@ -63,7 +63,6 @@ class _RegisterState extends State<Register> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(data['message'])),
         );
-        // Redireciona para a tela de login após o registro bem-sucedido
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const Login()),
@@ -117,8 +116,6 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               const SizedBox(height: 25),
-
-              // Campo de nome de usuário
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -131,8 +128,6 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
-              // Campo de e-mail
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -146,8 +141,6 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
-              // Campo de telefone
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -161,8 +154,6 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
-              // Campo de senha
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -176,8 +167,6 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
-              // Campo de confirmação de senha
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
@@ -191,10 +180,7 @@ class _RegisterState extends State<Register> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 20),
-
-              // Botão de registro
               ElevatedButton(
                 onPressed: _register,
                 style: ElevatedButton.styleFrom(
@@ -202,7 +188,6 @@ class _RegisterState extends State<Register> {
                 ),
                 child: const Text("Register"),
               ),
-
               const SizedBox(height: 20),
             ],
           ),
