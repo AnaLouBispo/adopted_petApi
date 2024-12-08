@@ -7,7 +7,6 @@ class Favorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Lista fictícia de pets favoritos (substitua pelos dados reais)
     final List<Map<String, String>> favoritePets = [
       {
         'name': 'Amber',
@@ -32,7 +31,6 @@ class Favorite extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Categorias
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
@@ -44,8 +42,6 @@ class Favorite extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-
-            // Lista de Pets Favoritos
             Expanded(
               child: ListView.builder(
                 itemCount: favoritePets.length,
@@ -54,10 +50,10 @@ class Favorite extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
                     child: PetContainer(
-                      petName: pet['name']!, // Nome do pet
-                      petAge: pet['age']!, // Idade do pet
-                      imageUrl: pet['imageUrl']!, // Imagem do pet
-                      backgroundColor: Colors.orangeAccent.shade100, // Cor de fundo
+                      petName: pet['name']!,
+                      petAge: pet['age']!,
+                      imageUrl: pet['imageUrl']!,
+                      backgroundColor: Colors.orangeAccent.shade100,
                     ),
                   );
                 },
