@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:adopted_pet/view/pet_info.dart'; // Para a navegação
-
 class PetContainer extends StatelessWidget {
   final String petName;
   final String petAge;
@@ -40,7 +37,7 @@ class PetContainer extends StatelessWidget {
           color: backgroundColor,
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: NetworkImage(imageUrl), // Usando o URL da imagem
+            image: NetworkImage(imageUrl),
           ),
         ),
         child: Stack(
@@ -52,10 +49,10 @@ class PetContainer extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(255, 248, 141, 69)),
                 onPressed: () {
-                  navigateToPetInfo(context); // Navega para a tela de detalhes
+                  navigateToPetInfo(context);
                 },
                 child: Text(
-                  petName, // Exibe o nome do pet no botão
+                  petName,
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -69,7 +66,7 @@ class PetContainer extends StatelessWidget {
                     Icons.location_on,
                     size: 15,
                   ),
-                  Text("Distance (5km)"), // Informação fictícia de distância
+                  Text("Distance (5km)"),
                 ],
               ),
             ),
