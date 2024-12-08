@@ -35,7 +35,7 @@ class PetInfo extends StatelessWidget {
                 ),
                 child: ClipOval(
                   child: Image.network(
-                    imageUrl, // Usando o URL da imagem do pet
+                    imageUrl,
                     fit: BoxFit.cover,
                     width: 120,
                     height: 120,
@@ -45,7 +45,7 @@ class PetInfo extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Nome do Pet: $petName', // Exibindo o nome do pet
+              'Nome do Pet: $petName',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -54,7 +54,7 @@ class PetInfo extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Idade: $petAge', // Exibindo a idade do pet
+              'Idade: $petAge',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black54,
@@ -62,7 +62,7 @@ class PetInfo extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              'Raça: Vira Lata', // Informação fixa de raça, pode ser dinâmica
+              'Raça: Vira Lata',
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.black54,
@@ -70,7 +70,7 @@ class PetInfo extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Descrição: $petName é um(a) pet amigável e enérgico(a), adora brincar e correr pela casa.', // Descrição do pet
+              'Descrição: $petName é um(a) pet amigável e enérgico(a), adora brincar e correr pela casa.',
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.black87,
