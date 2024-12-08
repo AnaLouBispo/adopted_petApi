@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
     if (images is List && images.isNotEmpty) {
       return images[0];
     }
-    return 'https://via.placeholder.com/150'; // URL de placeholder caso não tenha imagem
+    return 'https://via.placeholder.com/150';
   }
 
   @override
@@ -74,9 +74,7 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.menu, color: Colors.white),
-          onPressed: () {
-            // Ação para abrir menu lateral
-          },
+          onPressed: () {},
         ),
         actions: [
           IconButton(
@@ -94,7 +92,6 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Banner com sombra e cantos arredondados
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Container(
@@ -133,8 +130,6 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-
-            // Categorias estilizadas
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
@@ -177,8 +172,6 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-
-            // Pets Grid
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: isLoading
@@ -220,8 +213,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-
-      // Botão flutuante melhorado
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.push(
