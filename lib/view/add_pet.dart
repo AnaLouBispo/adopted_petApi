@@ -1,9 +1,8 @@
 import 'package:adopted_pet/view/home.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert'; // Para codificar os dados
-import 'package:http/http.dart' as http; // Para fazer a requisição HTTP
-import 'package:shared_preferences/shared_preferences.dart'; // Para recuperar o token
-
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AddPet extends StatefulWidget {
   const AddPet({super.key});
@@ -21,7 +20,6 @@ class _AddPetState extends State<AddPet> {
   Future<void> _createPet() async {
     final String url = "https://pet-adopt-dq32j.ondigitalocean.app/pet/create";
 
-    // Recuperar o token armazenado
     final prefs = await SharedPreferences.getInstance();
     final String? token = prefs.getString('user_token');
 
@@ -32,7 +30,6 @@ class _AddPetState extends State<AddPet> {
       return;
     }
 
-    // Dados do corpo da requisição
     final Map<String, dynamic> body = {
       "name": nameController.text,
       "location": locationController.text,
@@ -45,7 +42,7 @@ class _AddPetState extends State<AddPet> {
         Uri.parse(url),
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer $token", // Enviar o token na autorização
+          "Authorization": "Bearer $token",
         },
         body: json.encode(body),
       );
