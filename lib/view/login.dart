@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:adopted_pet/view/home.dart'; // Substitua com a tela correta
+import 'package:adopted_pet/view/home.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -42,7 +42,6 @@ class Login extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            // Adicionando controladores para os campos de email e senha
             _LoginForm(),
           ],
         ),
@@ -62,7 +61,6 @@ class __LoginFormState extends State<_LoginForm> {
   String _errorMessage = "";
   bool _isLoading = false;
 
-  // Função de login
   Future<void> _login(BuildContext context) async {
     final String email = _emailController.text.trim();
     final String password = _passwordController.text.trim();
@@ -77,7 +75,7 @@ class __LoginFormState extends State<_LoginForm> {
     final Uri url = Uri.parse("https://pet-adopt-dq32j.ondigitalocean.app/user/login");
     setState(() {
       _isLoading = true;
-      _errorMessage = ""; // Limpa a mensagem de erro
+      _errorMessage = "";
     });
 
     try {
@@ -94,11 +92,9 @@ class __LoginFormState extends State<_LoginForm> {
         final responseData = jsonDecode(response.body);
 
         if (responseData['token'] != null) {
-          // Armazenar o token nas SharedPreferences
           final prefs = await SharedPreferences.getInstance();
           await prefs.setString('user_token', responseData['token']);
 
-          // Navegar para a tela principal (Home)
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => Home()),
@@ -160,7 +156,7 @@ class __LoginFormState extends State<_LoginForm> {
         ),
         const SizedBox(height: 20),
         if (_isLoading)
-          CircularProgressIndicator() // Exibe um carregando
+          CircularProgressIndicator() 
         else
           ElevatedButton(
             onPressed: () => _login(context),
